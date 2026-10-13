@@ -4,28 +4,46 @@ class MyException(Exception):
 class ExceptionsDemo:
     
     def divide(self, a, b):
-        result = a / b
-        print("Division result:", result)
+        try:
+            result = a / b
+            print("Division result:", result)
+        except ZeroDivisionError:
+            print("Como vas a dividir entre zero goey")
     
     def access_list(self, lst, index):
-        print("Element:", lst[index])
+        try:
+            print("Element:", lst[index])
+        except IndexError:
+            print("Te tas saliendo del rango de indices goey")
     
     def access_dict(self, dic, key):
-        print("Value:", dic[key])
+        try:
+            print("Value:", dic[key])
+        except KeyError:
+            print("Esa llave no existe en el diccionario goey")
     
     def read_file(self, filename):
-        with open(filename, "r") as f:
-            content = f.read()
-            print(content)
+        try:
+            with open(filename, "r") as f:
+                content = f.read()
+                print(content)
+        except FileExistsError:
+            print("Ese nombre de archivo no existe goey")
     
     def access_attribute(self, obj):
-        print(obj.tnonexistent_attribue)
+        try:
+            print(obj.tnonexistent_attribue)
+        except ArithmeticError:
+            print("Ese método del objeto no existe goey")
     
     def check_positive(self, number):
-        if number < 0:
-            raise MyException("The number must be positive.")
-        else:
-            print("Valid number:", number)
+        try:
+            if number < 0:
+                raise MyException("The number must be positive.")
+            else:
+                print("Valid number:", number)
+        except MemoryError:
+            print("El número es negativo goey")
 
 
 class MyException(Exception):
