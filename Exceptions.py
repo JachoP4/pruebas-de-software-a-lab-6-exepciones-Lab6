@@ -27,6 +27,5 @@ class ExceptionsDemo:
         else:
             print("Valid number:", number)
 
-
 class MyException(Exception):
     pass

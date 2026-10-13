@@ -9,31 +9,37 @@ class ExceptionsDemo:
             print("Division result:", result)
         except ZeroDivisionError:
             print("Como vas a dividir entre zero goey")
+        except TypeError:
+            print("Como vas a dividir diferentes tipos de datos goey")
     
     def access_list(self, lst, index):
         try:
             print("Element:", lst[index])
         except IndexError:
             print("Te tas saliendo del rango de indices goey")
+        except TypeError:
+            print("Tienes que ponerle una lista goey")
     
     def access_dict(self, dic, key):
         try:
             print("Value:", dic[key])
         except KeyError:
             print("Esa llave no existe en el diccionario goey")
+        except TypeError:
+            print("Tienes que meter un diccionario goey")
     
     def read_file(self, filename):
         try:
             with open(filename, "r") as f:
                 content = f.read()
                 print(content)
-        except FileExistsError:
+        except FileNotFoundError:
             print("Ese nombre de archivo no existe goey")
     
     def access_attribute(self, obj):
         try:
             print(obj.tnonexistent_attribue)
-        except ArithmeticError:
+        except AttributeError:
             print("Ese método del objeto no existe goey")
     
     def check_positive(self, number):
